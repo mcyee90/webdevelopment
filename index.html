@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Latitude: Home</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="row">
+    <div class = "col-lg-12 col-md-12 col-sm-12">
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <p class="navbar nav-left-text"><a class="a-link a-visited" href="index.html">Latitude</a></p>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plots <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="temp.html"><span>Temperature</span></a></li>
+              <li><a href="humidity.html"><span>Humidity</span></a></li>
+              <li><a href="cloudiness.html"><span>Cloudiness</span></a></li>
+              <li><a href="windspeed.html"><span>Windspeed</span></a></li>
+            </ul>
+          </li>
+          <li><a href="comparison.html">Comparison</a></li>
+          <li><a href="weatherData.html">Data</a></li>
+        </ul>
+      </div>
+    </nav>
+    </div>
+  </div>
+
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-8 col-sm-12">
+            <div class="border-box">
+            <h1>Summary: Latitude vs. X</h1>
+            <hr>
+            <div class="pull-left">
+              <img src="images/temp.png" alt="Latitude vs. Temperature" width = 400>
+            </div>
+            <p>
+              In this project, I worked to analyze different weather patterns and how they may be affected by a cities location based on latitude. In order to accomplish this, I took the following steps:<br>
+              <ol>
+                <li>I worked with Python's base functionality randomly generate coordinates</li>
+                <li>Using the coordinates, I utilized citipy's neareast city functionality to grab the nearest cities to a pair of coordinates. I also eliminated duplicate city entries. </li>
+                <li>Using the cities names, I then gathered the longitude and latitude in addition to the Temperature, Humidity, Cloudiness and Windspeed from each city.</li>
+                <li>I used Pandas to organize and clean data for a dataframe to prepare it for graphical analysis</li>
+                <li>Lastly, I used MatPlotLib to graph data based on latitude on the x-axis and different variables (listed above) on the y-axis.</li>
+                <br>
+              </ol>             
+              On this website, you will see the output graphs and CSV file used in the data as well as a comparison of the number of different variables for each city. In analyzing the data and using the random number generators, I realized a few shortcomings in this approach. First, when using the nearest city functionality on the citipy, there were many duplicate cities. This is due to the fact that one city may have many coordinates closest to it (like an island). Lastly, based on the documentation of citipy, it categorizes a city as having a specific population, however, there may be smaller cities that with particular weather patterns, or there may be patches of land that do not have inhabitants and do not have cities.<br><br>
+              Enjoy!
+            </p>
+            </div>
+          </div>
+    
+          <div class="col-lg-4 col-md-4 col-sm-12">
+              <div class="border-box">
+                <h2>Visualizations</h2>
+                <hr>
+                <p>
+                  <a href="temp.html"><img src="images/temp.png" alt="Latitude vs. Temperature" width = 150></a> 
+                  <a href="humidity.html"><img src="images/humidity.png" alt="Latitude vs. Humidity" width = 150></a>
+                </p>
+                <p>
+                  <a href="cloudiness.html"><img src="images/cloudiness.png" alt="Latitude vs. Cloudiness" width = 150></a>
+                  <a href="windspeed.html"><img src="images/windspeed.png" alt="Latitude vs. Windspeed" width = 150></a>
+                </p>
+
+              </div>
+          </div>
+        </div>
+      </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
